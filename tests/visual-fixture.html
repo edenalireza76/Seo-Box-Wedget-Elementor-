@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AARDM — screenshot presets, multiple instances, RTL, long content</title>
+<link rel="stylesheet" href="../assets/layouts.css">
+<style>
+  body{margin:0;background:#f8fafc;font-family:Tahoma,Arial,sans-serif;padding:30px 12px;box-sizing:border-box}
+  .test-shell{max-width:1300px;margin:0 auto}
+  .elementor-widget{margin:0 0 35px}
+  /* Test fixture ONLY: this stands in for the original EXISTING read-more engine's clipping.
+     It is NOT included in the production CSS. No toggle JS is shipped. */
+  .aardm-content{max-height:292px;overflow:hidden}
+  .elementor-widget:has([aria-expanded="true"]) .aardm-content{max-height:none}
+  .aardm-actions{margin-top:16px}
+  .elementor-widget.aardm-skin-industrial .aardm-content{max-height:320px}
+  .elementor-widget.aardm-skin-industrial:has([aria-expanded="true"]) .aardm-content{max-height:none}
+  .elementor-widget.aardm-skin-industrial .aardm-actions{text-align:center}
+</style>
+</head>
+<body>
+<main class="test-shell" id="fixtures">
+  <div class="elementor-widget aardm-skin-dental" id="card-dental"><div class="elementor-widget-container">
+    <div class="aardm-content" id="dental-content">
+      <p>امروزه با پیشرفت چشمگیر فناوری‌های نوظهور در عرصه پزشکی، روش‌های سنتی دندانپزشکی که همراه با درد، قالب‌گیری‌های خسته‌کننده، طول درمان‌های طویل و خطاهای انسانی بودند جای خود را به سیستم‌های مدرن داده‌اند. کلینیک دندانپزشکی دیجیتال دکتر حسینی به‌عنوان یکی از جامع‌ترین و مجهزترین مراکز درمانی و زیبایی دهان و دندان در منطقه سعادت آباد تهران، با تلفیق دانش تخصصی و تجهیزات پیشرفته دیجیتال، استانداردهای جدیدی را در خدمات دندانپزشکی تعریف کرده است.</p>
+      <h2>دندانپزشکی دیجیتال چیست و چه مزایایی دارد؟</h2>
+      <p>دندانپزشکی دیجیتال به طیف وسیعی از ابزارها و فناوری‌های کامپیوتری، اسکنرهای سه‌بعدی داخل دهانی، نرم‌افزارهای تحلیلی و دستگاه‌های تراش اشاره دارد که جایگزین ابزارهای دستی و سنتی قدیمی شده‌اند. تمام فرایند با دقت بالا و تجهیزات مدرن انجام می‌شود.</p>
+      <p>مزایای دندانپزشکی دیجیتال نسبت به روش‌های سنتی شامل کاهش خطای انسانی، افزایش دقت اندازه‌گیری، برنامه‌ریزی دقیق درمان و راحتی بیمار است.</p>
+      <h2>فرایندهای دیجیتال در دندانپزشکی</h2><p>این بخش نمونه‌ای از متن طولانی است که باید بدون حذف یا ارسال درخواست جدید در HTML اولیه وجود داشته باشد. کیفیت درمان به شرایط هر مراجعه‌کننده و تشخیص پزشک بستگی دارد.</p>
+      <p>تکرار متن تست: این محتوا برای بررسی رفتار متن طولانی فارسی، فاصله‌ها، شکستن خط‌ها و حالت‌های مختلف نمایش استفاده می‌شود.</p>
+    </div>
+    <div class="aardm-actions"><button type="button" class="aardm-toggle" aria-expanded="false" aria-controls="dental-content">+ مشاهده بیشتر</button></div>
+  </div></div>
+  <div class="elementor-widget aardm-skin-beauty" id="card-beauty"><div class="elementor-widget-container">
+    <div class="aardm-content" id="beauty-content">
+      <h1>کلینیک زیبایی ایرانمنش؛ کلینیک تخصصی پوست، مو و زیبایی <span class="aardm-accent">در غرب تهران</span></h1>
+      <p>اگر تا حالا دنبال یک کلینیک زیبایی مطمئن گشته‌اید، احتمالاً با انبوهی از تبلیغات و وعده‌های مشابه روبه‌رو شده‌اید که تشخیص کیفیت واقعی را سخت می‌کند. کلینیک زیبایی ایرانمنش در غرب تهران با تیم پزشکی متخصص، تجهیزات روز و رویکردی شفاف در ارائه خدمات پوست، مو و زیبایی فعالیت می‌کند.</p>
+      <p>در اینجا قرار نیست فقط از خودمان تعریف کنیم؛ می‌خواهیم به شما نشان دهیم چطور یک مرکز زیبایی خوب را از بین گزینه‌های زیاد پیدا کنید و چه سؤال‌هایی باید قبل از هر تصمیم بپرسید.</p>
+      <h2>چگونه بهترین کلینیک زیبایی را انتخاب کنیم؟</h2>
+      <p>انتخاب کلینیک زیبایی شبیه انتخاب پزشک است، نه خرید یک محصول. نتیجه کار روی صورت و بدن شما باقی می‌ماند، پس معیارهای انتخاب باید فراتر از قیمت یا فاصله جغرافیایی باشد.</p>
+      <p>سه معیار اصلی که همیشه باید بررسی کنید:</p>
+      <ul><li>مجوز رسمی فعالیت از سازمان نظام پزشکی یا وزارت بهداشت</li><li>حضور پزشک متخصص در حین انجام خدمات</li><li>شفافیت در ارائه توضیحات خدمات، محدودیت‌ها و هزینه‌ها</li></ul>
+      <h2>نکات تکمیلی پیش از انتخاب</h2><p>با پرسیدن سؤال‌های روشن و بررسی نمونه‌کارهای واقعی می‌توانید تصمیم آگاهانه‌تری بگیرید.</p>
+    </div>
+    <div class="aardm-actions"><button type="button" class="aardm-toggle" aria-expanded="false" aria-controls="beauty-content">+ مشاهده بیشتر</button></div>
+  </div></div>
+  <div class="elementor-widget aardm-skin-industrial" id="card-industrial"><div class="elementor-widget-container">
+    <div class="aardm-content" id="industrial-content">
+      <h2>خرید بلبرینگ صنعتی از مرکز فروش بلبرینگ با ارسال فوری</h2>
+      <p>اگر به دنبال خرید بلبرینگ صنعتی اصل، استعلام قیمت بلبرینگ یا همکاری با یک فروشگاه بلبرینگ معتبر هستید، خلیج بلبرینگ با تأمین انواع بلبرینگ، رولبرینگ و <strong class="aardm-accent">اتاق منطق</strong> از برندهای معتبر جهانی، امکان خرید اینترنتی، ارسال فوری و مشاوره تخصصی را فراهم کرده است. ما به عنوان تأمین‌کننده بلبرینگ، محصولات موردنیاز صنایع مختلف را با ضمانت اصالت و قیمت رقابتی عرضه می‌کنیم.</p>
+      <h2>خرید بهترین انواع بلبرینگ و کاربردها در خلیج بلبرینگ</h2>
+      <p>بلبرینگ‌ها در طیف گسترده‌ای از انواع و طراحی‌های تخصصی تولید می‌شوند تا پاسخگوی نیازهای متنوع صنایع باشند. هر نوع بلبرینگ برای شرایط خاصی طراحی شده است؛ از تحمل بارهای سنگین و سرعت‌های بالا گرفته تا کار در دماهای شدید و محیط‌های خورنده. انتخاب درست بلبرینگ، تفاوت بین عملکرد بهینه و توقف‌های پرهزینه را رقم می‌زند.</p>
+      <p>بلبرینگ شیار عمیق، دو ردیفه و کف‌گرد تنها تعدادی از انواع موجود هستند. در بررسی مشخصات فنی، همواره شرایط کاربرد را در نظر بگیرید.</p>
+      <p>ادامه متن فارسی طولانی برای بررسی نمایش تودرتوی هدینگ‌ها، متن بولد و چینش عناصر در چندین ویجت هم‌زمان.</p>
+    </div>
+    <div class="aardm-actions"><button type="button" class="aardm-toggle" aria-expanded="false" aria-controls="industrial-content">+ نمایش بیشتر</button></div>
+  </div></div>
+  <!-- Second instance of the same design ensures selected presets do not interfere. -->
+  <div class="elementor-widget aardm-skin-dental" id="card-dental-2"><div class="elementor-widget-container">
+    <div class="aardm-content" id="dental-2-content"><p>نمونه دوم با محتوای مستقل و شناسه مستقل برای آزمون چند ویجت در یک صفحه.</p><p>این محتوای طولانی باید در HTML اولیه موجود باشد و بدون درخواست AJAX قابل دسترسی باشد.</p></div>
+    <div class="aardm-actions"><button type="button" class="aardm-toggle" aria-expanded="false" aria-controls="dental-2-content">+ مشاهده بیشتر</button></div>
+  </div></div>
+</main>
+</body>
+</html>

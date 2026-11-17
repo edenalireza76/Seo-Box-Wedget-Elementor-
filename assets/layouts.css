@@ -1,0 +1,295 @@
+/* Alireza Advanced Read More — screenshot layout pack 1.0.0
+ * Additive visual layer. No layout selectors apply unless a user selects a preset.
+ * Content, accessibility attributes, state and animation are owned by original widget.
+ */
+
+/* Common layout surface; all selectors MUST remain scoped to selected presets. */
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container {
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  margin-inline: auto;
+  overflow: hidden;
+  direction: rtl;
+  text-align: right;
+  font-family: inherit;
+  font-weight: 400;
+  border: 1px solid var(--aardm-border);
+  border-radius: var(--aardm-radius);
+  background-color: var(--aardm-bg);
+  color: var(--aardm-text);
+  padding: var(--aardm-pad-block) var(--aardm-pad-inline);
+  box-shadow: var(--aardm-shadow, none);
+  line-height: var(--aardm-line-height, 1.95);
+  min-height: var(--aardm-min-height);
+  max-width: var(--aardm-max-width);
+}
+
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container :is(p,li) {
+  font-family: inherit;
+  font-size: var(--aardm-body-size);
+  line-height: var(--aardm-line-height, 1.95);
+  color: var(--aardm-text);
+}
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container p {
+  margin: 0 0 15px;
+}
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container :is(h1,h2,h3,h4,h5,h6) {
+  font-family: inherit;
+  text-align: right;
+  color: var(--aardm-heading);
+  font-weight: 750;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container :is(ul,ol) {
+  margin: 0 0 16px;
+  padding-inline-start: 23px;
+  padding-inline-end: 0;
+}
+
+/* Optional semantic marker for only the read-more toggle. Supports likely legacy classes.
+ * Ideally the original button includes .aardm-toggle; no new buttons are created. */
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container :is(
+  .aardm-toggle,
+  .aam-toggle,
+  .aarm-toggle,
+  .alireza-read-more-toggle,
+  .read-more-toggle,
+  .read-more-btn,
+  .read-more-button,
+  [data-read-more-toggle],
+  button[aria-expanded],
+  a[aria-expanded]
+) {
+  box-sizing: border-box;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--aardm-button-height);
+  border: 1px solid var(--aardm-button-border);
+  border-radius: var(--aardm-button-radius);
+  background: var(--aardm-button-bg);
+  color: var(--aardm-button-text);
+  padding: 8px 22px;
+  font: inherit;
+  font-size: var(--aardm-button-font, 14px);
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container :is(
+  .aardm-toggle,.aam-toggle,.aarm-toggle,.alireza-read-more-toggle,
+  .read-more-toggle,.read-more-btn,.read-more-button,[data-read-more-toggle],
+  button[aria-expanded],a[aria-expanded]
+):focus-visible {
+  outline: 3px solid var(--aardm-focus);
+  outline-offset: 3px;
+}
+
+/* Fade always lives *above* existing server-rendered content, not instead of it.
+ * Existing engine is responsible for content height and aria-expanded state. */
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container::after {
+  content: "";
+  position: absolute;
+  left: var(--aardm-pad-inline);
+  right: var(--aardm-pad-inline);
+  bottom: var(--aardm-fade-bottom);
+  height: var(--aardm-fade-height);
+  background: linear-gradient(to bottom, transparent, var(--aardm-bg) 97%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 220ms ease;
+}
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container:has([aria-expanded="true"])::after,
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container:has(.aardm-is-expanded)::after,
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container[data-expanded="true"]::after {
+  opacity: 0;
+}
+/* An explicit marker can be placed on the existing content wrapper when needed. */
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container :is(.aardm-accent,[data-aardm-accent]) {
+  color: var(--aardm-accent);
+}
+
+/* Reference 01: light-gray dental card, right-hand solid blue pill. */
+.elementor-widget.aardm-skin-dental > .elementor-widget-container {
+  --aardm-bg: #fafafa;
+  --aardm-border: #e0e0e0;
+  --aardm-radius: 20px;
+  --aardm-text: #666666;
+  --aardm-heading: #858994;
+  --aardm-accent: #4187ff;
+  --aardm-pad-block: 24px;
+  --aardm-pad-inline: 24px;
+  --aardm-min-height: 508px;
+  --aardm-max-width: 1280px;
+  --aardm-line-height: 1.95;
+  --aardm-body-size: 16px;
+  --aardm-fade-height: 174px;
+  --aardm-fade-bottom: 86px;
+  --aardm-button-bg: #4187ff;
+  --aardm-button-border: #4187ff;
+  --aardm-button-text: #fff;
+  --aardm-button-radius: 26px;
+  --aardm-button-height: 42px;
+  --aardm-action-bottom: 24px;
+  --aardm-button-font: 14px;
+  --aardm-focus: #184d9d;
+}
+.elementor-widget.aardm-skin-dental > .elementor-widget-container :is(h2,h3) {font-size: 21px;}
+.elementor-widget.aardm-skin-dental > .elementor-widget-container :is(h1) {font-size: 25px;}
+
+/* Reference 02: warm cream card with right-side small outline button. */
+.elementor-widget.aardm-skin-beauty > .elementor-widget-container {
+  --aardm-bg: #fff9f2;
+  --aardm-border: #e3e3e3;
+  --aardm-radius: 16px;
+  --aardm-text: #5e5b60;
+  --aardm-heading: #838082;
+  --aardm-accent: #ca9d7e;
+  --aardm-pad-block: 29px;
+  --aardm-pad-inline: 30px;
+  --aardm-min-height: 483px;
+  --aardm-max-width: 1280px;
+  --aardm-line-height: 1.95;
+  --aardm-body-size: 15px;
+  --aardm-fade-height: 162px;
+  --aardm-fade-bottom: 82px;
+  --aardm-button-bg: transparent;
+  --aardm-button-border: #23242c;
+  --aardm-button-text: #23242c;
+  --aardm-button-radius: 12px;
+  --aardm-button-height: 48px;
+  --aardm-action-bottom: 30px;
+  --aardm-button-font: 14px;
+  --aardm-focus: #ca9d7e;
+}
+.elementor-widget.aardm-skin-beauty > .elementor-widget-container h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #23242c;
+  margin-bottom: 14px;
+}
+.elementor-widget.aardm-skin-beauty > .elementor-widget-container :is(h2,h3) {
+  font-size: 23px;
+  font-weight: 750;
+  margin-top: 16px;
+}
+
+/* Reference 03: restrained industrial white card, fine blue border, gold right heading rule. */
+.elementor-widget.aardm-skin-industrial > .elementor-widget-container {
+  --aardm-bg: #fff;
+  --aardm-border: #dce8f2;
+  --aardm-radius: 24px;
+  --aardm-text: #666666;
+  --aardm-heading: #464646;
+  --aardm-accent: #e0a100;
+  --aardm-shadow: 0 7px 34px rgba(23,57,94,.075);
+  --aardm-pad-block: 44px;
+  --aardm-pad-inline: 24px;
+  --aardm-min-height: 470px;
+  --aardm-max-width: 1000px;
+  --aardm-line-height: 1.95;
+  --aardm-body-size: 15px;
+  --aardm-fade-height: 110px;
+  --aardm-fade-bottom: 82px;
+  --aardm-button-bg: #fff;
+  --aardm-button-border: #145aab;
+  --aardm-button-text: #124a85;
+  --aardm-button-radius: 9px;
+  --aardm-button-height: 40px;
+  --aardm-action-bottom: 40px;
+  --aardm-button-font: 13px;
+  --aardm-focus: #145aab;
+}
+.elementor-widget.aardm-skin-industrial > .elementor-widget-container :is(h1,h2,h3) {
+  color: #484848;
+  font-weight: 750;
+  font-size: 23px;
+  border-inline-start: 3px solid #e4a400;
+  padding-inline-start: 10px;
+  margin: 0 0 13px;
+}
+.elementor-widget.aardm-skin-industrial > .elementor-widget-container :is(h2,h3):not(:first-child) {
+  margin-top: 26px;
+}
+
+/* Anchor the EXISTING action wrapper near the bottom in the collapsed card.
+ * Do not create a button, change clicks, or change the content markup. */
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container :is(.aardm-actions,.aam-actions,.aarm-actions,.read-more-actions,[data-read-more-actions]) {
+  position: absolute;
+  bottom: var(--aardm-action-bottom);
+  inset-inline: var(--aardm-pad-inline);
+  margin: 0;
+  z-index: 4;
+  text-align: right;
+}
+.elementor-widget.aardm-skin-industrial > .elementor-widget-container :is(.aardm-actions,.aam-actions,.aarm-actions,.read-more-actions,[data-read-more-actions]) {
+  text-align: center;
+}
+/* Support engines whose existing toggle is a direct child of the Elementor container. */
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container > :is(.aardm-toggle,.aam-toggle,.aarm-toggle,button[aria-expanded],a[aria-expanded]) {
+  position: absolute;
+  bottom: var(--aardm-action-bottom);
+  inset-inline-start: var(--aardm-pad-inline);
+}
+.elementor-widget.aardm-skin-industrial > .elementor-widget-container > :is(.aardm-toggle,.aam-toggle,.aarm-toggle,button[aria-expanded],a[aria-expanded]) {
+  inset-inline-start: 50%;
+  transform: translateX(50%);
+}
+/* Once expanded, move the original action control back into the normal document
+ * flow so long Persian content can increase the card height without overlap. */
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container:has([aria-expanded="true"]) :is(.aardm-actions,.aam-actions,.aarm-actions,.read-more-actions,[data-read-more-actions]),
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container:has(.aardm-is-expanded) :is(.aardm-actions,.aam-actions,.aarm-actions,.read-more-actions,[data-read-more-actions]) {
+  position: relative;
+  inset: auto;
+  margin-block-start: 20px;
+}
+.elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container:has([aria-expanded="true"]) > :is(.aardm-toggle,.aam-toggle,.aarm-toggle,button[aria-expanded],a[aria-expanded]) {
+  position: relative;
+  inset: auto;
+  transform: none;
+  margin-block-start: 20px;
+}
+
+@media (max-width: 1024px) {
+  .elementor-widget.aardm-skin-dental > .elementor-widget-container,
+  .elementor-widget.aardm-skin-beauty > .elementor-widget-container,
+  .elementor-widget.aardm-skin-industrial > .elementor-widget-container {
+    --aardm-pad-inline: 23px;
+  }
+  .elementor-widget.aardm-skin-beauty > .elementor-widget-container h1 {font-size: 25px;}
+  .elementor-widget.aardm-skin-industrial > .elementor-widget-container :is(h1,h2,h3) {font-size: 21px;}
+}
+@media (max-width: 767px) {
+  .elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container {
+    --aardm-min-height: 410px;
+    --aardm-pad-inline: 17px;
+    --aardm-pad-block: 20px;
+    --aardm-fade-height: 110px;
+    --aardm-fade-bottom: 76px;
+    --aardm-body-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: break-word;
+  }
+  .elementor-widget.aardm-skin-dental > .elementor-widget-container {--aardm-radius: 16px;}
+  .elementor-widget.aardm-skin-beauty > .elementor-widget-container {--aardm-radius: 14px;}
+  .elementor-widget.aardm-skin-industrial > .elementor-widget-container {--aardm-radius: 18px;}
+  .elementor-widget.aardm-skin-beauty > .elementor-widget-container h1 {font-size: 21px;line-height:1.55;}
+  .elementor-widget.aardm-skin-beauty > .elementor-widget-container :is(h2,h3) {font-size: 19px;}
+  .elementor-widget.aardm-skin-dental > .elementor-widget-container :is(h1,h2,h3) {font-size: 19px;}
+  .elementor-widget.aardm-skin-industrial > .elementor-widget-container :is(h1,h2,h3) {font-size: 19px;}
+}
+@media (prefers-reduced-motion: reduce) {
+  .elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container::after,
+  .elementor-widget:is(.aardm-skin-dental,.aardm-skin-beauty,.aardm-skin-industrial) > .elementor-widget-container :is(.aardm-toggle,.aam-toggle,.aarm-toggle,[aria-expanded]) {
+    transition: none;
+  }
+}
